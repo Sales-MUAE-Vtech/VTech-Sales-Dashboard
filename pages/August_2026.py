@@ -7,7 +7,7 @@ import plotly.express as px
 # 1. Page Config and Centered, Multi-line Title
 st.set_page_config(layout="wide")
 st.markdown("""
-    <h1 style='text-align: center; margin-bottom: 0px;'>SALES vs QUOTES (VTech)</h1>
+    <h1 style='text-align: center; margin-bottom: 0px;'>SALES vs QUOTES (Venuetech)</h1>
     <h3 style='text-align: center; margin-top: 5px; font-weight: normal;'>(Aug 2025 vs Aug 2026)</h3>
 	<h4 style='text-align: center; margin-top: 5px; font-weight: normal;'>(Source: SAGE X3)</h4>
     <br>
