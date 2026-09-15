@@ -7,7 +7,7 @@ import plotly.express as px
 # 1. Page Config and Centered, Multi-line Title
 st.set_page_config(layout="wide")
 st.markdown("""
-    <h1 style='text-align: center; margin-bottom: 0px;'>SALES vs QUOTES (MPUAE)</h1>
+    <h1 style='text-align: center; margin-bottom: 0px;'>SALES vs QUOTES (VTech)</h1>
     <h3 style='text-align: center; margin-top: 5px; font-weight: normal;'>(Aug 2025 vs Aug 2026)</h3>
 	<h4 style='text-align: center; margin-top: 5px; font-weight: normal;'>(Source: SAGE X3)</h4>
     <br>
@@ -15,10 +15,10 @@ st.markdown("""
 
 @st.cache_data(max_entries=3)
 def load_data():
-    sales_26 = pd.read_excel('2026_Aug/B_Inv_MPUAE-Aug2026.xlsx', engine='calamine')
-    sales_25 = pd.read_excel('2026_Aug/B.1_Inv_MPUAE-Aug2025.xlsx', engine='calamine')
-    quotes_26 = pd.read_excel('2026_Aug/A_SQ_MPUAE-Aug2026.xlsx', engine='calamine')
-    quotes_25 = pd.read_excel('2026_Aug/A.1_SQ_MPUAE-Aug2025.xlsx', engine='calamine')
+    sales_26 = pd.read_excel('2026_Aug/B_Inv_VTEC-Aug2026.xlsx', engine='calamine')
+    sales_25 = pd.read_excel('2026_Aug/B.1_Inv_VTEC-Aug2025.xlsx', engine='calamine')
+    quotes_26 = pd.read_excel('2026_Aug/A_SQ_VTEC-Aug2026.xlsx', engine='calamine')
+    quotes_25 = pd.read_excel('2026_Aug/A.1_SQ_VTEC-Aug2025.xlsx', engine='calamine')
     
     sales_26['Year'], sales_25['Year'] = '2026', '2025'
     quotes_26['Year'], quotes_25['Year'] = '2026', '2025'
@@ -158,6 +158,6 @@ with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
 st.download_button(
     label="Download Summaries as Excel",
     data=buffer.getvalue(),
-    file_name="2026-AUG_MPUE-Sales_Quotes_Summary.xlsx",
+    file_name="2026-AUG_VTech-Sales_Quotes_Summary.xlsx",
     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 )
